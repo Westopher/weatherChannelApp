@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,10 +16,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OWf-UM-E6p"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Oa-Ns-NCs"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="superView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +36,7 @@
                                 <rect key="frame" x="199.5" y="75" width="150" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-jI-vot">
                                 <rect key="frame" x="146.5" y="130.5" width="40.5" height="20.5"/>
@@ -51,7 +48,7 @@
                                 <rect key="frame" x="199.5" y="125.5" width="49" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-c8-yfE">
                                 <rect key="frame" x="266" y="125.5" width="30" height="30"/>
@@ -61,6 +58,18 @@
                                 <rect key="frame" x="146" y="608.5" width="82" height="30"/>
                                 <state key="normal" title="See Forcast"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Info Returned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEP-0z-j2Q">
+                                <rect key="frame" x="122" y="334" width="131" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check City and State Names" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjf-Kg-LZ0">
+                                <rect key="frame" x="77" y="375" width="220" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUR-Pt-UBG">
                                 <rect key="frame" x="56" y="220" width="262.5" height="347"/>
                                 <subviews>
@@ -121,26 +130,31 @@
                         <constraints>
                             <constraint firstItem="Jaw-bp-ZCR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="3E2-hT-Qgj"/>
                             <constraint firstItem="yUR-Pt-UBG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="5lf-yL-o9s"/>
-                            <constraint firstItem="4Ie-Eo-CPH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.86" id="CPD-Er-Lw2"/>
+                            <constraint firstItem="4Ie-Eo-CPH" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" multiplier="0.86" id="CPD-Er-Lw2"/>
                             <constraint firstItem="yUR-Pt-UBG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.52" id="HXJ-GA-RJG"/>
                             <constraint firstItem="CE9-53-ia3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.87" id="IWS-E2-efw"/>
-                            <constraint firstItem="cuu-dS-Y3b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.44" id="NPU-9B-rdg"/>
+                            <constraint firstItem="cuu-dS-Y3b" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" multiplier="0.44" id="NPU-9B-rdg"/>
                             <constraint firstItem="Jaw-bp-ZCR" firstAttribute="leading" secondItem="4Ie-Eo-CPH" secondAttribute="trailing" multiplier="1.13" id="NbT-MT-IYu"/>
-                            <constraint firstItem="CE9-53-ia3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RPr-aI-O9X"/>
-                            <constraint firstItem="yUR-Pt-UBG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xdx-SP-dH5"/>
+                            <constraint firstItem="CE9-53-ia3" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" id="RPr-aI-O9X"/>
+                            <constraint firstItem="yUR-Pt-UBG" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" id="Xdx-SP-dH5"/>
                             <constraint firstItem="ZWe-jI-vot" firstAttribute="top" secondItem="4Ie-Eo-CPH" secondAttribute="bottom" multiplier="1.3" id="Xzr-lu-VnJ"/>
                             <constraint firstItem="K6K-Jx-mLE" firstAttribute="leading" secondItem="Jaw-bp-ZCR" secondAttribute="leading" id="YcO-NB-bxq"/>
                             <constraint firstItem="lcf-c8-yfE" firstAttribute="leading" secondItem="K6K-Jx-mLE" secondAttribute="trailing" multiplier="1.07" id="bji-Ai-mDr"/>
                             <constraint firstItem="K6K-Jx-mLE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.13" id="hYm-E8-319"/>
+                            <constraint firstItem="Kjf-Kg-LZ0" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" id="hyC-Cf-AKL"/>
                             <constraint firstItem="yUR-Pt-UBG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.18" id="lLk-nd-xRI"/>
                             <constraint firstItem="4Ie-Eo-CPH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.27" id="qOe-cE-Nl5"/>
                             <constraint firstItem="cuu-dS-Y3b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.34" id="raN-fe-Zx6"/>
                             <constraint firstItem="lcf-c8-yfE" firstAttribute="centerY" secondItem="K6K-Jx-mLE" secondAttribute="centerY" id="rtd-8t-cwO"/>
+                            <constraint firstItem="Kjf-Kg-LZ0" firstAttribute="centerY" secondItem="PZX-DQ-ajs" secondAttribute="centerY" multiplier="1.12" id="vBc-zZ-8Fq"/>
+                            <constraint firstItem="zEP-0z-j2Q" firstAttribute="centerX" secondItem="PZX-DQ-ajs" secondAttribute="centerX" id="vcR-sK-6d6"/>
                             <constraint firstItem="cuu-dS-Y3b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.22" id="w7e-qh-eZk"/>
                             <constraint firstItem="ZWe-jI-vot" firstAttribute="leading" secondItem="4Ie-Eo-CPH" secondAttribute="leading" id="wUl-gT-SE2"/>
+                            <constraint firstItem="zEP-0z-j2Q" firstAttribute="centerY" secondItem="PZX-DQ-ajs" secondAttribute="centerY" id="wW5-bY-lhz"/>
                             <constraint firstItem="Jaw-bp-ZCR" firstAttribute="centerY" secondItem="4Ie-Eo-CPH" secondAttribute="centerY" id="yQ6-kx-IlB"/>
                             <constraint firstItem="K6K-Jx-mLE" firstAttribute="centerY" secondItem="ZWe-jI-vot" secondAttribute="centerY" id="zQ6-4C-NPK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PZX-DQ-ajs"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
