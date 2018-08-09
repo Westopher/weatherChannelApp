@@ -10,10 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
+//User Inputs (labels and text boxes)
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var infoFrameView: UIView!
+    @IBOutlet weak var locationLabel: UILabel!
+
+//StackView
+    @IBOutlet weak var conditionsLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    
+//Error Labels
+    @IBOutlet weak var noInforeturnedLabel: UILabel!
+    @IBOutlet weak var checkCityAndStateNamesLabel: UILabel!
+
+//User Inputs (buttons)
+    @IBAction func getCurrentWeather(_ sender: Any) {
     }
+    
+    @IBAction func getForecast(_ sender: Any) {
+    }
+    
+    override func viewDidLoad() { super.viewDidLoad() }
 
 
 }

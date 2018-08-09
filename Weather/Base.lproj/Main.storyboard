@@ -53,10 +53,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-c8-yfE">
                                 <rect key="frame" x="266" y="125.5" width="30" height="30"/>
                                 <state key="normal" title="Go!"/>
+                                <connections>
+                                    <action selector="getCurrentWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJI-kK-3JT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE9-53-ia3">
                                 <rect key="frame" x="146" y="608.5" width="82" height="30"/>
                                 <state key="normal" title="See Forcast"/>
+                                <connections>
+                                    <action selector="getForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3K-3y-CRR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Info Returned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEP-0z-j2Q">
                                 <rect key="frame" x="122" y="334" width="131" height="19.5"/>
@@ -156,6 +162,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PZX-DQ-ajs"/>
                     </view>
+                    <connections>
+                        <outlet property="checkCityAndStateNamesLabel" destination="Kjf-Kg-LZ0" id="Y2c-En-LAw"/>
+                        <outlet property="cityTextField" destination="Jaw-bp-ZCR" id="hji-2i-OvW"/>
+                        <outlet property="conditionsLabel" destination="ofp-Ky-VEr" id="DT9-AB-eR3"/>
+                        <outlet property="feelsLikeLabel" destination="gIO-2F-Tow" id="cUc-SJ-o0U"/>
+                        <outlet property="humidityLabel" destination="7LZ-8S-qCP" id="lhN-1r-UUx"/>
+                        <outlet property="infoFrameView" destination="yUR-Pt-UBG" id="jR2-ra-ffs"/>
+                        <outlet property="locationLabel" destination="CTH-eS-XHv" id="LRX-RQ-UIo"/>
+                        <outlet property="noInforeturnedLabel" destination="zEP-0z-j2Q" id="WQA-hg-dVl"/>
+                        <outlet property="stateTextField" destination="K6K-Jx-mLE" id="h7S-Bc-zPQ"/>
+                        <outlet property="tempLabel" destination="HGJ-SO-BWZ" id="X1j-7Q-TIN"/>
+                        <outlet property="windLabel" destination="zaW-zq-J2u" id="Poa-A1-hbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
