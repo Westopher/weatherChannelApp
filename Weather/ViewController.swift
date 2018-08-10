@@ -31,11 +31,18 @@ class ViewController: UIViewController {
     @IBAction func getCurrentWeather(_ sender: Any) {
         view.endEditing(true)
         if stateTextField.text!.characters.count != 2 || cityTextField.text == "" { return }
-        
+
+//Activity Indicator
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
         activityIndicatorView.center = CGPoint(x: view.center.x, y: view.center.y)
         activityIndicatorView.color = UIColor.black
+        activityIndicatorView.startAnimating()
+        view.addSubview(activityIndicatorView)
+        infoFrameView.alpha = 0
+        noInforeturnedLabel.alpha = 0
+        checkCityAndStateNamesLabel.alpha = 0
+        
     }
     
     @IBAction func getForecast(_ sender: Any) {
