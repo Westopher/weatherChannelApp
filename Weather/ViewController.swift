@@ -29,6 +29,13 @@ class ViewController: UIViewController {
 
 //User Inputs (buttons)
     @IBAction func getCurrentWeather(_ sender: Any) {
+        view.endEditing(true)
+        if stateTextField.text!.characters.count != 2 || cityTextField.text == "" { return }
+        
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
+        activityIndicatorView.center = CGPoint(x: view.center.x, y: view.center.y)
+        activityIndicatorView.color = UIColor.black
     }
     
     @IBAction func getForecast(_ sender: Any) {
