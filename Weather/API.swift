@@ -41,8 +41,11 @@ class WeatherAPIEngine {
             
             let humdityString = currentObservationDictionary["relative_humidity"] as! String
             let forcastURLString = currentObservationDictionary["forcast_url"] as! String
+            
+            APICompletionHandler(weatherConditionString, temperatureString, feelsLikeString, windSpeedString, humdityString, forcastURLString)
             }
-                catch { APICompletionHandler("", "", "", "", "", "") }
+            catch { APICompletionHandler("", "", "", "", "", "") }
+            
         }).resume()
         
     }
