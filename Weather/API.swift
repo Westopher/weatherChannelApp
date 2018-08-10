@@ -15,5 +15,37 @@ class WeatherAPIEngine {
     var APIKey: String
     init(APIKey: String) { self.APIKey = APIKey }
     
+    //parameters of function declared
+    func fetchWeatherStatus(stateAbbreviation: String, cityName: String, APICompletionHandler: @escaping (_ condition: String, _ temperature: String, _ feelsLike: String, _ windSpeed: String, _ humidity: String, _ forecastURL: String) -> ()) {
+        
+    //creating the url to be called on at the API
+        let urlString = "http://api.wunderground.com/api/" + APIKey + "/conditions/q/" + stateAbbreviation + "/" + cityName.replacingOccurrences(of: " ", with: "_") + ".json"
     
+    //actually calling the API
+        URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) in
+            
+            guard let rawData = data, error == nil else { return }
+            
+            do {
+                let JSONDataDictionary = try JSONSerialization.jsonObject(with: rawData) as? [String: Any]
+            
+            guard let currentObservationDictionary = JSONDataDictionary!["current_observation"] as? [String: Any] else { APICompletionHandler ("", "", "", "", "", "") ; return }
+            
+            let weatherConditionString = currentObservationDictionary["weather"] as! String
+            let temperatureString = currentObservationDictionary["temperature_string"] as! String
+            let feelsLikeString = currentObservationDictionary["feelslike_string"] as! String
+            
+            let windSpeedAsFloat = currentObservationDictionary["wind_gust_mph"] as? Float
+            let windSpeedAsString = currentObservationDictionary["wind_gust_mph"] as? String
+            let windSpeedString = windSpeedAsFloat == nil ? windSpeedAsString! : "\(windSpeedAsFloat)"
+            
+            let humdityString = currentObservationDictionary["relative_humidity"] as! String
+            let forcastURLString = currentObservationDictionary["forcast_url"] as! String
+            }
+                catch { APICompletionHandler("", "", "", "", "", "") }
+        }).resume()
+        
+    }
+    
+
 }
