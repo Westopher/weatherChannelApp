@@ -61,6 +61,7 @@ class ViewController: UIViewController {
                 self.feelsLikeLabel.text = "Feels like: " + feelsLike
                 self.windLabel.text = "Wind: " + windSpeed + "mph"
                 self.humidityLabel.text = "Humidity: " + humidity
+                self.forecastURLString = forcastURL
             }
         }
         
@@ -68,8 +69,12 @@ class ViewController: UIViewController {
     
     // Button 2
     @IBAction func getForecast(_ sender: Any) {
+        if forecastURLString == nil || forecastURLString == "" { return }
+        UIApplication.shared.open(URL(string: forecastURLString)!, options: [:], completionHandler: nil)
+        
     }
 
+    var forecastURLString: String!
     
     override func viewDidLoad() { super.viewDidLoad() }
 
