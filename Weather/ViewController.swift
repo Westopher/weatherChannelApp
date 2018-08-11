@@ -27,7 +27,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var noInforeturnedLabel: UILabel!
     @IBOutlet weak var checkCityAndStateNamesLabel: UILabel!
 
-//User Inputs (buttons)
+//User Inputs
+
+    // Button 1
     @IBAction func getCurrentWeather(_ sender: Any) {
         view.endEditing(true)
         if stateTextField.text!.characters.count != 2 || cityTextField.text == "" { return }
@@ -43,13 +45,39 @@ class ViewController: UIViewController {
         noInforeturnedLabel.alpha = 0
         checkCityAndStateNamesLabel.alpha = 0
         
+        weatherAPIEngine.fetchWeatherStatus(stateAbbreviation: stateTextField.text!, cityName: cityTextField.text!) { (conditions, temperature, feelsLike, windSpeed, humidity, forcastURL) in
+            DispatchQueue.main.sync {
+                activityIndicatorView.stopAnimating()
+                activityIndicatorView.removeFromSuperview()
+                self.noInforeturnedLabel.alpha = 1
+                self.checkCityAndStateNamesLabel.alpha = 1
+                
+                if conditions == "" { self.infoFrameView.alpha = 0 ; return }
+                self.infoFrameView.alpha = 1
+                self.locationLabel.text = self.cityTextField.text! + ", " +
+                self.stateTextField.text!
+                self.conditionsLabel.text = "Conditions: " + conditions
+                self.tempLabel.text = "Temp: " + temperature
+                self.feelsLikeLabel.text = "Feels like: " + feelsLike
+                self.windLabel.text = "Wind: " + windSpeed + "mph"
+                self.humidityLabel.text = "Humidity: " + humidity
+            }
+        }
+        
     }
     
+    // Button 2
     @IBAction func getForecast(_ sender: Any) {
     }
+
     
     override func viewDidLoad() { super.viewDidLoad() }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        infoFrameView.alpha = 0
+        noInforeturnedLabel.alpha = 0
+        checkCityAndStateNamesLabel.alpha = 0
+        
+    }
 }
 
