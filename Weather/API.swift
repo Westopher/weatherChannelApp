@@ -37,12 +37,12 @@ class WeatherAPIEngine {
             
             let windSpeedAsFloat = currentObservationDictionary["wind_gust_mph"] as? Float
             let windSpeedAsString = currentObservationDictionary["wind_gust_mph"] as? String
-            let windSpeedString = windSpeedAsFloat == nil ? windSpeedAsString! : "\(windSpeedAsFloat)"
+            let windSpeedString = windSpeedAsFloat == nil ? windSpeedAsString! : "\(windSpeedAsFloat!)"
             
             let humdityString = currentObservationDictionary["relative_humidity"] as! String
-            let forcastURLString = currentObservationDictionary["forcast_url"] as! String
+            let forecastURLString = currentObservationDictionary["forecast_url"] as! String
             
-            APICompletionHandler(weatherConditionString, temperatureString, feelsLikeString, windSpeedString, humdityString, forcastURLString)
+            APICompletionHandler(weatherConditionString, temperatureString, feelsLikeString, windSpeedString, humdityString, forecastURLString)
             }
             catch { APICompletionHandler("", "", "", "", "", "") }
             
